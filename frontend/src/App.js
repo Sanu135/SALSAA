@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import StructureAnalyser from './StructureAnalyser';
-import BlueprintUploader from './BlueprintUploader';
 import StructureBuilder from './StructureBuilder';
 
 function App() {
@@ -19,15 +18,11 @@ function App() {
             <Link to="/analyser" onClick={() => setActiveTab('analyser')} className={activeTab === 'analyser' ? 'active' : ''}>
               Structure Analyser
             </Link>
-            <Link to="/uploader" onClick={() => setActiveTab('uploader')} className={activeTab === 'uploader' ? 'active' : ''}>
-              Blueprint Uploader
-            </Link>
           </nav>
         </header>
         <main className="App-content">
           <Routes>
             <Route path="/analyser" element={<StructureAnalyser />} />
-            <Route path="/uploader" element={<BlueprintUploader />} />
             <Route path="/builder" element={<StructureBuilder />} />
             <Route path="/" element={<StructureBuilder />} />
           </Routes>

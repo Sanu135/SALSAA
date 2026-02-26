@@ -1,0 +1,10 @@
+{
+  "name": "Example Blueprint",
+  "material": "Titanium",
+  "volume_mm3": 10000,
+  "bounding_box": {
+    "width": 100,
+    "height": 100
+  },
+  "depth_mm": 10
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './StructureAnalyser.css';
+import API_URL from './config';
 
 const StructureAnalyser = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +29,7 @@ const StructureAnalyser = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/analyze-structure', formData);
+      const response = await axios.post(`${API_URL}/analyze-structure`, formData);
       setAnalysisResult(response.data);
     } catch (err) {
       setError('An error occurred during analysis. Make sure the backend is running.');
@@ -59,7 +60,6 @@ const StructureAnalyser = () => {
                         <option value="Solid">Solid</option>
                         <option value="Honeycomb">Honeycomb</option>
                         <option value="Bone">Bone</option>
-                        <option value="mesh">Mesh</option>
                     </select>
                 </div>
                 <div className="control-group">

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api import analyze, blueprint
+from app.api import analyze, blueprint, blueprint_analyzer
 
 app = FastAPI()
 
@@ -22,6 +22,7 @@ app.add_middleware(
 
 app.include_router(analyze.router, prefix="/api")
 app.include_router(blueprint.router, prefix="/api")
+app.include_router(blueprint_analyzer.router, prefix="/api")
 
 @app.get("/")
 async def read_root():

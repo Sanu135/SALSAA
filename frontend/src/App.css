@@ -26,7 +26,7 @@ body {
   gap: 10px;
 }
 
-.App-nav button {
+.App-nav a {
   background: transparent;
   border: 1px solid #0d3050;
   color: #4a8099;
@@ -36,14 +36,17 @@ body {
   font-size: 14px;
   text-transform: uppercase;
   transition: all 0.3s ease;
+  border-radius: 8px;
+  text-decoration: none;
 }
 
-.App-nav button:hover {
+.App-nav a:hover {
   background: #0d3050;
   color: #00e5ff;
+  box-shadow: 0 0 10px #00e5ff80;
 }
 
-.App-nav button.active {
+.App-nav a.active {
   background: #00e5ff;
   color: #040d14;
   border-color: #00e5ff;
