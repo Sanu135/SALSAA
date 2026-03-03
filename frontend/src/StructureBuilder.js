@@ -229,7 +229,7 @@ export default function StructureBuilder(){
   const [simResult,setSimResult]=useState(null);
 
   const fetchStats = async()=>{
-    const res = await axios.post(`${API_BASE_URL}/api/analyze-structure`,{
+    const res = await axios.post(`${API_BASE_URL}/analyze-structure`,{
       shape,
       structure_type:structureType,
       diameter,

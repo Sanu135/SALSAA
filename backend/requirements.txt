@@ -16,4 +16,3 @@ typing_extensions==4.15.0
 uvicorn==0.40.0
 gunicorn==25.1.0
 python-multipart>=0.0.12
-python-multipart>=0.0.12
