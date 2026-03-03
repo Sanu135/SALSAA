@@ -147,20 +147,21 @@ function buildCrackTexture(isFailed) {
 // ─── Gauge Component ─────────────────────────────────────────────────────────
 function Gauge({ value, max, label, color }) {
   const pct = Math.min(1, value / max);
-  const angle = pct * 220 - 110;
-  const r = 38, cx = 50, cy = 54;
-  const toXY = (deg) => {
-    const rad = (deg - 90) * Math.PI / 180;
-    return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
-  };
-  const start = toXY(-110), end = toXY(angle);
-  const large = pct > 0.5 ? 1 : 0;
+  const r = 38, cx = 50, cy = 50;
+  const circumference = 2 * Math.PI * r;
+  const offset = circumference * (1 - pct);
   return (
-    <svg viewBox="0 0 100 70" style={{ width: "100%", maxWidth: 120 }}>
-      <path d={`M ${toXY(-110).x} ${toXY(-110).y} A ${r} ${r} 0 1 1 ${toXY(110).x} ${toXY(110).y}`} fill="none" stroke="#1a2a3a" strokeWidth="6" strokeLinecap="round" />
-      <path d={`M ${start.x} ${start.y} A ${r} ${r} 0 ${large} 1 ${end.x} ${end.y}`} fill="none" stroke={color} strokeWidth="6" strokeLinecap="round" />
-      <text x={cx} y={cy - 2} textAnchor="middle" fill="#fff" fontSize="12" fontWeight="bold">{Math.round(value)}</text>
-      <text x={cx} y={cy + 10} textAnchor="middle" fill="#7090a0" fontSize="6">{label}</text>
+    <svg viewBox="0 0 100 100" style={{ width: "100%", maxWidth: 120 }}>
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke="#1a2a3a" strokeWidth="6" />
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke={color} strokeWidth="6"
+        strokeLinecap="round"
+        strokeDasharray={circumference}
+        strokeDashoffset={offset}
+        transform={`rotate(-90 ${cx} ${cy})`}
+        style={{ transition: "stroke-dashoffset 0.6s ease" }}
+      />
+      <text x={cx} y={cy - 1} textAnchor="middle" fill="#fff" fontSize="14" fontWeight="bold">{Math.round(value)}</text>
+      <text x={cx} y={cy + 12} textAnchor="middle" fill="#7090a0" fontSize="7">{label}</text>
     </svg>
   );
 }

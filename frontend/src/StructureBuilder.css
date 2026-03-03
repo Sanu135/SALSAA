@@ -65,7 +65,7 @@
 
 .panels-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: 20px;
 }
 
