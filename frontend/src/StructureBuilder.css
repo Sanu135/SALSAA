@@ -1,0 +1,289 @@
+/* frontend/src/StructureBuilder.css */
+.structure-page {
+  min-height: 100vh;
+  background: #040d14;
+  font-family: 'Rajdhani', sans-serif;
+  color: #c8e6f5;
+  padding: 24px;
+}
+        
+.section-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #00e5ff, #7c4dff, #00e5ff);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+.section-sub {
+  color: #4a7090;
+  font-size: 13px;
+  letter-spacing: 3px;
+  margin-top: 4px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.viewer-container {
+  background: linear-gradient(135deg, #060f18 0%, #0a1a28 100%);
+  border: 1px solid #0d3050;
+  border-radius: 12px;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 0 40px #00e5ff15, inset 0 0 60px #00000060;
+}
+
+.viewer-container::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, #00e5ff08 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.viewer-label {
+  position: absolute; top: 14px; left: 20px; z-index: 10;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px; letter-spacing: 2px; color: #00e5ff88;
+}
+
+.load-display {
+  position: absolute; top: 14px; right: 20px; z-index: 10;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px; color: #00e5ff; letter-spacing: 1px;
+}
+
+.panels-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.panel {
+  background: linear-gradient(145deg, #070f18, #0b1825);
+  border: 1px solid #0d3050;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 30px #00000060;
+}
+
+.panel-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #00e5ff;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #0d3050;
+  display: flex; align-items: center; gap: 8px;
+}
+
+.panel-title::before {
+  content: '';
+  display: inline-block; width: 3px; height: 14px;
+  background: #00e5ff;
+  border-radius: 2px;
+}
+
+.control-group {
+  margin-bottom: 16px;
+}
+
+.control-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #4a8099;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: flex; justify-content: space-between;
+  align-items: center;
+}
+
+.control-value {
+  color: #00e5ff;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+}
+
+select, input[type=range] {
+  width: 100%;
+  background: #050d16;
+  border: 1px solid #0d3050;
+  color: #c8e6f5;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color 0.2s;
+}
+
+select:focus { border-color: #00e5ff55; }
+
+select option { background: #070f18; }
+
+input[type=range] {
+  padding: 0;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #00e5ff var(--pct, 50%), #0d2535 var(--pct, 50%));
+  border: none;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: #00e5ff;
+  border: 2px solid #040d14;
+  box-shadow: 0 0 8px #00e5ff80;
+  cursor: pointer;
+}
+
+.drop-btn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #00bcd4, #0097a7);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s;
+  box-shadow: 0 4px 20px #00bcd440;
+}
+
+.drop-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #00e5ff, #00bcd4);
+  box-shadow: 0 4px 30px #00e5ff60;
+  transform: translateY(-1px);
+}
+
+.drop-btn:active:not(:disabled) { transform: translateY(1px); }
+
+.drop-btn:disabled {
+  opacity: 0.6; cursor: not-allowed;
+}
+
+.drop-btn.dropping {
+  animation: dropShake 0.5s ease-in-out;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid #0a1e2e;
+}
+
+.stat-row:last-child { border-bottom: none; }
+
+.stat-name {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: #4a8099;
+  text-transform: uppercase;
+}
+
+.stat-val {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 14px;
+  color: #c8e6f5;
+}
+
+.stat-bar-wrap {
+  width: 80px; height: 3px;
+  background: #0a1e2e;
+  border-radius: 2px; overflow: hidden;
+}
+
+.stat-bar {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.gauge-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 16px;
+}
+
+.failure-badge {
+  display: flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, #ff174420, #ff572210);
+  border: 1px solid #ff174460;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-top: 10px;
+  animation: pulse 1s infinite alternate;
+}
+
+.pass-badge {
+  display: flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, #00e67620, #00bcd420);
+  border: 1px solid #00e67660;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-top: 10px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+@keyframes crackGrow {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes pulse {
+  from { opacity: 0.75; }
+  to { opacity: 1; }
+}
+
+@keyframes dropShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+}
+
+.shape-indicator {
+  position: absolute; bottom: 14px; left: 20px; z-index: 10;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px; color: #00e5ff55; letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.corner-dot {
+  position: absolute; width: 6px; height: 6px;
+  border-radius: 50%; background: #00e5ff;
+  box-shadow: 0 0 6px #00e5ff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }

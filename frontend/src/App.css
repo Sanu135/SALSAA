@@ -1,0 +1,58 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rajdhani', sans-serif;
+  background-color: #040d14;
+  color: #c8e6f5;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #070f18;
+  padding: 10px 20px;
+  border-bottom: 1px solid #0d3050;
+  display: flex;
+  justify-content: center;
+}
+
+.App-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.App-nav a {
+  background: transparent;
+  border: 1px solid #0d3050;
+  color: #4a8099;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.App-nav a:hover {
+  background: #0d3050;
+  color: #00e5ff;
+  box-shadow: 0 0 10px #00e5ff80;
+}
+
+.App-nav a.active {
+  background: #00e5ff;
+  color: #040d14;
+  border-color: #00e5ff;
+  box-shadow: 0 0 15px #00e5ff80;
+}
+
+.App-content {
+  padding: 20px;
+}
