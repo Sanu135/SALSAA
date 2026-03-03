@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/SALSAA/static/css/main.9ef32cc0.css",
-    "main.js": "/SALSAA/static/js/main.a8480b40.js",
+    "main.js": "/SALSAA/static/js/main.a42ac566.js",
     "static/js/453.20359781.chunk.js": "/SALSAA/static/js/453.20359781.chunk.js",
     "index.html": "/SALSAA/index.html",
     "main.9ef32cc0.css.map": "/SALSAA/static/css/main.9ef32cc0.css.map",
-    "main.a8480b40.js.map": "/SALSAA/static/js/main.a8480b40.js.map",
+    "main.a42ac566.js.map": "/SALSAA/static/js/main.a42ac566.js.map",
     "453.20359781.chunk.js.map": "/SALSAA/static/js/453.20359781.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9ef32cc0.css",
-    "static/js/main.a8480b40.js"
+    "static/js/main.a42ac566.js"
   ]
 }
