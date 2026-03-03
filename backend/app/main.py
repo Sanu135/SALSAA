@@ -5,17 +5,10 @@ from app.api import analyze, blueprint, blueprint_analyzer
 app = FastAPI()
 
 # Configure CORS
-origins = [
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "https://sanu135.github.io",
-    "https://salsa-analysis-engine2.onrender.com",
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
