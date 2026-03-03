@@ -19,4 +19,4 @@ app.include_router(blueprint_analyzer.router, prefix="/api")
 
 @app.get("/")
 async def read_root():
-    return {"message": "SALSA Backend is running"}
+    return {"message": "SALSA Backend is running", "version": "2.0-cors-fix"}
