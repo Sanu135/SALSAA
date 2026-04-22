@@ -11,7 +11,7 @@ function Team() {
       <div className="team-grid" style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center', marginTop: '40px' }}>
         {/* Developer 1 */}
         <div className="team-card" style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '15px', width: '300px', textAlign: 'center' }}>
-          
+          <img src={process.env.PUBLIC_URL + "/SANIKA.jpeg"} alt="Team Member Profile" className="team-img" style={{ objectPosition: 'top', width: '100%', height: '400px', objectFit: 'cover', borderRadius: '5px' }} />
           <div className="team-info" style={{ marginTop: '15px' }}>
             <div className="team-name" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold' }}>
               SANIKA PUROHIT I055 SAP-ID 70122500044
@@ -24,7 +24,7 @@ function Team() {
 
         {/* Developer 2 */}
         <div className="team-card" style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '15px', width: '300px', textAlign: 'center' }}>
-          
+         
           <div className="team-info" style={{ marginTop: '15px' }}>
             <div className="team-name" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold' }}>
              Swasti Paliwal I049 Sap ID - 70122500039
@@ -50,7 +50,7 @@ function Team() {
 
         {/* Developer 4 */}
         <div className="team-card" style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '15px', width: '300px', textAlign: 'center' }}>
-          
+          <img src={process.env.PUBLIC_URL + "/LISA.jpeg"} alt="Team Member Profile" className="team-img" style={{ objectPosition: 'top', width: '100%', height: '400px', objectFit: 'cover', borderRadius: '5px' }} />
           <div className="team-info" style={{ marginTop: '15px' }}>
             <div className="team-name" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold' }}>
               LISA SIDDIQUI I069 Sap ID- 70122500034
